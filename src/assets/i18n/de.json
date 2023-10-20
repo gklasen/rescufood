@@ -1,31 +1,8 @@
-{
-<<<<<<< HEAD
+{ 
     "NOTIFICATION": {
 		"OVERVIEW": "Übersicht",
 		"SUMMARY": "Rezepte {{recipes}}\nZutaten {{ingredients}}"
-	},
-=======
-    "COURSES": {
-        "UPLOAD": "Kurs hochladen",
-        "TITLE": "Title",
-        "FILENAME": "Dateiname",
-        "UPLOADDATE": "Datum Upload",
-        "COMMENT": "Kommentar",
-        "ACTIONS": "Aktionen",
-        "COURSES": "Kurse"
-    }, 
-    "PERFORMANCES": {
-        "TITLE": "Title",
-
-        "UPLOAD": "Durchführung hochladen",
-        "FILENAME": "Dateiname",
-        "UPLOADDATE": "Datum Upload",
-        "COMMENT": "Kommentar",
-        "ACTIONS": "Aktionen",
-        "PERFORMANCES": "Durchführungen"
-
-    }, 
->>>>>>> 5a60097796d352e7af3ff3278226200c5c8782ce
+	}, 
     "UPLOAD": {
         "BACK": "Zurück",
         "TITLELABEL": "Title",
@@ -41,12 +18,7 @@
         "UPLOADFAILURE": "Der Upload ist fehlgeschlagen",
         "PLEASETRYAGAIN": "Bitte versuchen Sie ihren Upload erneut oder kontaktieren Sie den Administrator",
         "TRYAGAIN": "Erneut versuchen"
-    }, 
-    "PAGINATION": {
-        "PREVIOUS": "Zurück", 
-        "NEXT": "Weiter"
-<<<<<<< HEAD
-    },
+    },  
 	"INGREDIENTS": {
 		"ENGLISH_NAMES": "Namen (englisch)",
 		"GERMAN_NAMES": "Namen (deutsch)"	,
@@ -221,21 +193,5 @@
 	},
 	"DRAFTS": { 
 		"NEW_ENTRY":  "Neue Zutat! Ursprüngliche Eingabe des Nutzers war: {{name}}"
-	}
-=======
-    }, 
-    "SEARCH": {
-        "PLACEHOLDER": "Suche..."
-    },
-    "LOGIN":{
-        "LOGIN":"Anmelden",
-        "SIGN_IN":"Melden Sie sich bei Ihrem Konto an",
-        "PASSWORD":"Passwort vergessen ?",
-        "INVALID_PASSWORD":"Ungültiges Passwort",
-        "INVALID_USERNAME":"Ungültiger Benutzername",
-        "INVALID_LOGIN":"Falscher Benutzername oder Passwort"
-    }
-    
->>>>>>> 5a60097796d352e7af3ff3278226200c5c8782ce
-
+	} 
 }

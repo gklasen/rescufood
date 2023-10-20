@@ -3,30 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { DefaultLayoutComponent } from './containers';
 import { Page404Component } from './views/pages/page404/page404.component';
-import { Page500Component } from './views/pages/page500/page500.component';
-import { RegisterComponent } from './views/pages/register/register.component';
+import { Page500Component } from './views/pages/page500/page500.component';  
 
-import { AuthGuard } from './auth/auth.guard'; // Import the AuthGuard
-
-const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'ingredient_insertion',
-    pathMatch: 'full'
-  },
-  {
-    path: 'login',
-    loadChildren: () =>
-          import('./views/login/login.module').then((m) => m.LoginModule),
-  },
+const routes: Routes = [ 
   {
     path: '',
     component: DefaultLayoutComponent,
     data: {
 		title: 'Home'
     },
-    children: [
-<<<<<<< HEAD
+    children: [ 
 		{
 			path: '',
 			pathMatch: 'full',
@@ -58,7 +44,7 @@ const routes: Routes = [
 				import('./views/drafts/drafts.module').then((m) => m.DraftsModule)
 		},		
 		{
-		path: 'theme',
+			path: 'theme',
 			loadChildren: () =>
 				import('./views/theme/theme.module').then((m) => m.ThemeModule)
 		},
@@ -101,73 +87,7 @@ const routes: Routes = [
 			path: 'pages',
 			loadChildren: () =>
 				import('./views/pages/pages.module').then((m) => m.PagesModule)
-		}		
-=======
-      {
-        path: 'dashboard',
-        loadChildren: () =>
-          import('./views/dashboard/dashboard.module').then((m) => m.DashboardModule),
-          canActivate: [AuthGuard], 
-      },
-      {
-        path: 'courses',
-        loadChildren: () =>
-          import('./views/courses/courses.module').then((m) => m.CoursesModule),
-          canActivate: [AuthGuard], 
-      },
-      {
-        path: 'performances',
-        loadChildren: () =>
-          import('./views/performances/performances.module').then((m) => m.PerformancesModule),
-          canActivate: [AuthGuard], 
-      },
-      {
-        path: 'theme',
-        loadChildren: () =>
-          import('./views/theme/theme.module').then((m) => m.ThemeModule)
-      },
-      {
-        path: 'base',
-        loadChildren: () =>
-          import('./views/base/base.module').then((m) => m.BaseModule)
-          
-      },
-      {
-        path: 'buttons',
-        loadChildren: () =>
-          import('./views/buttons/buttons.module').then((m) => m.ButtonsModule)
-      },
-      {
-        path: 'forms',
-        loadChildren: () =>
-          import('./views/forms/forms.module').then((m) => m.CoreUIFormsModule)
-      },
-      {
-        path: 'charts',
-        loadChildren: () =>
-          import('./views/charts/charts.module').then((m) => m.ChartsModule)
-      },
-      {
-        path: 'icons',
-        loadChildren: () =>
-          import('./views/icons/icons.module').then((m) => m.IconsModule)
-      },
-      {
-        path: 'notifications',
-        loadChildren: () =>
-          import('./views/notifications/notifications.module').then((m) => m.NotificationsModule)
-      },
-      {
-        path: 'widgets',
-        loadChildren: () =>
-          import('./views/widgets/widgets.module').then((m) => m.WidgetsModule)
-      },
-      {
-        path: 'pages',
-        loadChildren: () =>
-          import('./views/pages/pages.module').then((m) => m.PagesModule)
-      }
->>>>>>> 5a60097796d352e7af3ff3278226200c5c8782ce
+		}		 
     ]
   },
   {
@@ -183,16 +103,7 @@ const routes: Routes = [
     data: {
       title: 'Page 500'
     }
-  },
-  
-  {
-    path: 'register',
-    component: RegisterComponent,
-    data: {
-      title: 'Register Page'
-    }
-  },
-  {path: '**', redirectTo: 'login'}
+  } 
 ];
 
 @NgModule({

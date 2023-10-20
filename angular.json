@@ -22,12 +22,8 @@
       "architect": {
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
-          "options": {
-<<<<<<< HEAD
-            "outputPath": "dist",
-=======
-            "outputPath": "www/html",
->>>>>>> 5a60097796d352e7af3ff3278226200c5c8782ce
+          "options": { 
+            "outputPath": "dist", 
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -74,7 +70,7 @@
                 }
               ]
             },
-            "development": {
+            "dev": {
               "buildOptimizer": false,
               "optimization": false,
               "vendorChunk": true,
@@ -84,7 +80,7 @@
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.development.ts"
+                  "with": "src/environments/environment.dev.ts"
                 }
               ]
             }
@@ -97,11 +93,11 @@
             "production": {
               "browserTarget": "laola-video-frontend:build:production"
             },
-            "development": {
-              "browserTarget": "laola-video-frontend:build:development"
+            "dev": {
+              "browserTarget": "laola-video-frontend:build:dev"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "dev"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",

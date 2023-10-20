@@ -1,31 +1,8 @@
-{
-<<<<<<< HEAD
+{ 
     "NOTIFICATION": {
 		"OVERVIEW": "Overview",
 		"SUMMARY": "Recipes {{recipes}}\nIngredients {{ingredients}}"
-	},
-=======
-    "COURSES": {
-        "UPLOAD": "Upload course",
-        "TITLE": "Title",
-        "FILENAME": "Filename",
-        "UPLOADDATE": "Upload date",
-        "COMMENT": "Comment",
-        "ACTIONS": "Actions",
-        "COURSES": "Courses"
-
-    }, 
-    "PERFORMANCES": {
-        "TITLE": "Title",
-        "UPLOAD": "Upload performance",
-        "FILENAME": "Filename",
-        "UPLOADDATE": "Upload date",
-        "COMMENT": "Comment",
-        "ACTIONS": "Actions",
-        "PERFORMANCES": "Performances"
-
-    },
->>>>>>> 5a60097796d352e7af3ff3278226200c5c8782ce
+	}, 
     "UPLOAD": {
         "BACK": "Back",
         "TITLELABEL": "Title", 
@@ -41,12 +18,7 @@
         "UPLOADFAILURE": "The upload failed",
         "PLEASETRYAGAIN": "Please try another upload or contact the administrator",
         "TRYAGAIN": "Try again"
-    },
-    "PAGINATION": {
-        "PREVIOUS": "Previous", 
-        "NEXT": "Next"
-    },
-<<<<<<< HEAD
+    }, 
 	"INGREDIENTS": {
 		"ENGLISH_NAMES": "Names (english)",
 		"GERMAN_NAMES": "Names (german)",
@@ -220,19 +192,5 @@
 	},
 	"DRAFTS": { 
 		"NEW_ENTRY":  "New ingredient! Original entry by the user was: {{name}}"
-	}
-    
-=======
-    "SEARCH": {
-        "PLACEHOLDER": "Search..."
-    },
-    "LOGIN":{
-        "LOGIN":"Login",
-        "SIGN_IN":"Sign In to your account",
-        "FORGOT_PASSWORD":"Forgot password ?",
-        "INVALID_PASSWORD":"Invalid password",
-        "INVALID_USERNAME":"Invalid username",
-        "INVALID_LOGIN":"Incorrect username or password"
-    }
->>>>>>> 5a60097796d352e7af3ff3278226200c5c8782ce
+	} 
 }

@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
-import { PipesModule } from '../pipes/pipes.module';
-import { LaolaComponentsModule } from '../components/laola-components.module'
+import { PipesModule } from '../pipes/pipes.module'; 
 
 import {
     AlertModule,

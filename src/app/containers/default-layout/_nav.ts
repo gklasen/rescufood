@@ -1,8 +1,5 @@
 import { INavData } from '@coreui/angular';
-import { environment } from 'src/environments/environment.prod';
-
-export const navItems: INavData[] = [
-<<<<<<< HEAD
+export const navItems: INavData[] = [ 
   {
     name: 'Dashboard',
     url: '/dashboard',
@@ -81,44 +78,7 @@ export const navItems: INavData[] = [
     name: 'Base',
     url: '/base',
     iconComponent: { name: 'cil-puzzle' },
-    children: [
-=======
-
-  ...(environment.HIDE_ROUTES
-    ? [
-      {
-        name: 'Dashboard',
-        url: '/dashboard',
-        iconComponent: { name: 'cil-speedometer' }
-      },
-      {
-        title: true,
-        name: 'Videos'
-      },
-      {
-        name: 'Courses',
-        url: '/courses',
-        iconComponent: { name: 'cil-video' },
-        class: 'loala_link', 
-        children: [
-          {
-            name: 'Videos',
-            url: '/courses/videos'
-          },
-          {
-            name: 'Upload',
-            url: '/courses/file-upload'
-          } 
-        ]
-      },
-      {
-        name: 'Performances',
-        url: '/performances',
-        iconComponent: { name: 'cil-voice-over-record' }
-      },
-    ]
-    : [
->>>>>>> 5a60097796d352e7af3ff3278226200c5c8782ce
+    children: [ 
       {
         name: 'Dashboard',
         url: '/dashboard',
@@ -372,7 +332,7 @@ export const navItems: INavData[] = [
           }
         ]
       },
-      ]),
-  
+    ]
+  }
 
 ];

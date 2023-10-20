@@ -93,17 +93,13 @@ import {
   cilVoiceOverRecord,
   cilArrowThickLeft,
   cilAccountLogout,
-  cilZoom,
-<<<<<<< HEAD
+  cilZoom, 
   cilDataTransferUp,
   cilApple,
   cilFastfood,
   cilCaretTop,
-  cilCaretBottom 
-=======
-  cilX,
-  cilDataTransferUp
->>>>>>> 5a60097796d352e7af3ff3278226200c5c8782ce
+  cilCaretBottom ,
+  cilX  
 } from '@coreui/icons';
 
 export const iconSubset = {

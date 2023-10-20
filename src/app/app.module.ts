@@ -6,8 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule, HttpClient, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
-import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-<<<<<<< HEAD
+import {TranslateHttpLoader} from '@ngx-translate/http-loader'; 
 import { NgScrollbarModule } from 'ngx-scrollbar'; 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -18,12 +17,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore'; 
 
-import { AppConfig } from '../environments/environment';
-=======
-import { NgScrollbarModule } from 'ngx-scrollbar';
-import { LaolaComponentsModule } from './components/laola-components.module';
-import { AuthInterceptor } from './http-interceptors/auth.http-interceptor';
->>>>>>> 5a60097796d352e7af3ff3278226200c5c8782ce
+import { AppConfig } from '../environments/environment'; 
 
 // Import routing module
 import { AppRoutingModule } from './app-routing.module';
@@ -32,14 +26,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // Import containers
-import { DefaultFooterComponent, DefaultHeaderComponent, DefaultLayoutComponent } from './containers';
-
-
-export function HttpLoaderFactory(http: HttpClient) {
-    return new TranslateHttpLoader(http);
-}
-
-
+import { DefaultFooterComponent, DefaultHeaderComponent, DefaultLayoutComponent } from './containers'; 
 import {
   AvatarModule,
   BadgeModule,
@@ -116,12 +103,7 @@ const APP_CONTAINERS = [
     {
       provide: LocationStrategy,
       useClass: HashLocationStrategy
-    },
-    {
-        provide: HTTP_INTERCEPTORS,
-        useClass: AuthInterceptor,
-        multi: true
-    },
+    }, 
     IconSetService,
     Title
   ],
