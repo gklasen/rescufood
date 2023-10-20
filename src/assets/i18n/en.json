@@ -1,0 +1,238 @@
+{
+<<<<<<< HEAD
+    "NOTIFICATION": {
+		"OVERVIEW": "Overview",
+		"SUMMARY": "Recipes {{recipes}}\nIngredients {{ingredients}}"
+	},
+=======
+    "COURSES": {
+        "UPLOAD": "Upload course",
+        "TITLE": "Title",
+        "FILENAME": "Filename",
+        "UPLOADDATE": "Upload date",
+        "COMMENT": "Comment",
+        "ACTIONS": "Actions",
+        "COURSES": "Courses"
+
+    }, 
+    "PERFORMANCES": {
+        "TITLE": "Title",
+        "UPLOAD": "Upload performance",
+        "FILENAME": "Filename",
+        "UPLOADDATE": "Upload date",
+        "COMMENT": "Comment",
+        "ACTIONS": "Actions",
+        "PERFORMANCES": "Performances"
+
+    },
+>>>>>>> 5a60097796d352e7af3ff3278226200c5c8782ce
+    "UPLOAD": {
+        "BACK": "Back",
+        "TITLELABEL": "Title", 
+        "VIDEOLABEL": "Video", 
+        "COMMENTLABEL": "Comment", 
+        "SUBMIT": "Upload",
+        "UPLOADINPROGRESS": "Your upload is in progress...",
+        "REQUIREDERROR": "This field is required",
+        "UPLOADDONE": "Done!",
+        "DONECANRETURNTOLIST": "The upload has been completed. You can return to list now.",
+        "DONEORCANADDMORE": "You can also add more videos.",
+        "UPLOADMORE": "Upload more",
+        "UPLOADFAILURE": "The upload failed",
+        "PLEASETRYAGAIN": "Please try another upload or contact the administrator",
+        "TRYAGAIN": "Try again"
+    },
+    "PAGINATION": {
+        "PREVIOUS": "Previous", 
+        "NEXT": "Next"
+    },
+<<<<<<< HEAD
+	"INGREDIENTS": {
+		"ENGLISH_NAMES": "Names (english)",
+		"GERMAN_NAMES": "Names (german)",
+		"UNIT_OF_MEASUREMENT": "Units of Measurement",
+		"UNIT": "Unit",
+		"VALUE": "Value",
+		"CHANGE_ICON": "Change Icon",
+		"ENTRY": "Entry",
+		"FACTOR": "Factor",
+		"DEFAULT_VALUES": "Default Values",
+		"DEFAULT_UNIT": "Default Unit",
+		"DEFAULT_STOREROOM": "Storeroom (default)",
+		"DEFAULT_IGNORELIST": "ignored (default)", 
+		"UPDATE": "Update",
+		"CATEGORY": "Category",
+		"ALERTS": {
+			"ID_NEEDED": "You need to insert an ID!",
+			"ICON_NEEDED": "Consider using another icon then the default icon",
+			"DEFAULT_VARIANT": "At least one of your ingredient variants has the default value or is empty",
+			"NO_VALUES": "Assign at least one value to one of your possible units"
+		},
+		"UNITS": {
+			"GRAM": "Gramm",
+			"MILLILITER": "Milliliter",
+			"PIECE_SMALL": "Piece (small)",
+			"PIECE": "Piece",
+			"PIECE_BIG": "Piece (big)",
+			"MUG": "Mug",
+			"CUP": "Cup",
+			"CAN": "Can",
+			"CAN_BIG": "Can (big)",
+			"PACKAGE": "Package",
+			"BAG": "Bag",
+			"GLASS": "Glass",
+			"TABLESPOON": "Tablespoon",
+			"TEASPOON": "Teaspoon",
+			"KNIFETIP": "Knifetip",
+			"SLICE": "Slice",
+			"BUNCH": "Bunch",
+			"STALK": "Stalk",
+			"LEAF": "Leaf",
+			"HANDFUL": "Handful",
+			"CUBE": "Cube",
+			"CLOVE": "Clove",
+			"DROP": "Drop",
+			"ROLL": "Roll",
+			"SOME": "some" 
+		}
+	},
+	"RECIPES": {
+		"CATEGORY": "Category",
+		"TITLE_DE": "Title (german)",
+		"TITLE_EN": "Title (english)"
+		"DESCRIPTION_DE": "Description (german)",
+		"DESCRIPTION_EN": "Description (english)",
+		"DURATION_PREP": "Dauer (Preperation)",
+		"DURATION_COOK": "Dauer (Cook)",
+		"DURATION_REST": "Dauer (Rest)",
+		"DURATION_TOTAL": "Dauer (Total)",	
+		"PORTIONS": "Portions",
+		"DIFFICULTY_LABEL": "Difficulty"
+		"VEGETARIAN": "Vegetarian",
+		"VEGAN": "Vegan", 
+		"INGREDIENTS": "Zutaten",
+		"NAME": "Name",
+		"ORDER": "Order", 
+		"UNIT": "Unit", 
+		"VALUE": "Value",
+		"OPTIONAL": "Optional",	
+		"AUTHOR": "Author",
+		"AUTHOR_MAIL": "E-Mail",	
+		"PARSE_URL": "Parse URL",
+		"ALREADY_SAVED": "The recipe already has been inserted.",		
+		"TRANSLATE": "Translate",
+		"UNITS": {
+			"SNACK": "Snack",
+			"SALAD": "Salad",
+			"DIPS": "Dips",
+			"SOUP": "Soup",
+			"GARNISH": "Garnish",
+			"STARTER": "Starter",
+			"MAINDISH": "Maindish",
+			"DESSERT": "Dessert",
+			"DRINK": "Drink",
+			"BREAKFAST": "Breakfast",
+			"CAKE": "Cake",
+			"BREAD": "Bread or buns",
+			"SWEETS": "Sweets"
+		},
+		"ALERTS": {
+			"URL_NEEDED": "Please insert the URL, from where the recipe originally was taken!" ,
+			"MISSING_TITLES": "Please insert titles for every language!",
+			"MISSING_DESCRIPTIONS": "Please insert descriptions for every language!",
+			"MISSING_DURATION": "Please check your preperation duration on values and errors!",
+			"MISSING_PORTIONS": "Please insert more than one portion!",
+			"DUMMY_INGREDIENT": "Remove all default ingredients from the recipe!",
+			"EMPTY_INGREDIENT": "An ingredient with another amount unit than \"some\" has an empty amount value",
+			"FALSE_INGREDIENT_VALUE": "An amount insertion of an ingredient is incorrect"
+		},
+		"DIFFICULTY": {
+			"EASY": "Easy",
+			"MEDIUM": "Normal",
+			"HARD": "Hard" 
+		}
+	},
+	"CATEGORIES": {
+		"ALMOND": "almond",
+		"APPLE": "apples",
+		"BEANS": "beans",
+		"BEEF": "beef",
+		"BERRIES": "berries",
+		"BREAD": "breads",
+		"BROTH": "broth",
+		"BUN": "Bun",
+		"BUN DOUGH": "Bun dough",
+		"CARAWAY": "caraway",
+		"CHEESE": "cheese",
+		"CHERRY": "cherry",
+		"CHICKEN": "chicken",
+		"CHILI": "chilli",
+		"CHIVE": "chives",
+		"CHOCOLATE": "chocolate",
+		"COFFEE": "coffee",
+		"COOKIE": "Cookies",
+		"CREAM": "cream",
+		"CREAM CHEESE": "Chocolate",
+		"CREME FRAICHE": "Creme Fraiche",
+		"CUCUMBER": "cucumber",
+		"EGG": "egg",
+		"FAT": "fats",
+		"FLAVOR": "flavors",
+		"FLOUR": "flour",
+		"FRUIT": "fruits",
+		"HAM": "ham",
+		"HERBS": "herbs",
+		"JAM": "jam",
+		"JUICE": "juices",
+		"KETCHUP": "ketchup",
+		"LEMONJUICE": "lemon juices",
+		"MINCE": "minced meat",
+		"MUESLI": "muesli",
+		"MUSHROOM": "mushrooms",
+		"MUSTARD": "mustard",
+		"NOODLE": "noodles",
+		"NUT": "nuts",
+		"OIL": "oils",
+		"OLIVE": "olives",
+		"ONION": "onions",
+		"PAPRIKA": "pepper",
+		"PAPRIKA POWDER": "paprika powder",
+		"PEACH": "peach",
+		"PEPPER": "pepper",
+		"PINEAPPLE": "Pineapple",
+		"PORK": "pork",
+		"PROCESSED CHEESE": "processed cheese",
+		"QUARK": "Quark",
+		"RICE": "rice",
+		"SALAD": "salads",
+		"SALMON": "salmon",
+		"SALT": "salt",
+		"SAUCE": "sauces",
+		"SEASONING": "Spices",
+		"SEMOLINA": "Semolina",
+		"SOUP GREEN": "soup green",
+		"SPICY SOUCE": "Hot sauces",
+		"SPINACH": "spinach",
+		"TOMATO": "tomatoes",
+		"TURKEY": "turkey",
+		"VINEGAR": "vinegar",
+		"YOGURT": "yogurt"
+	},
+	"DRAFTS": { 
+		"NEW_ENTRY":  "New ingredient! Original entry by the user was: {{name}}"
+	}
+    
+=======
+    "SEARCH": {
+        "PLACEHOLDER": "Search..."
+    },
+    "LOGIN":{
+        "LOGIN":"Login",
+        "SIGN_IN":"Sign In to your account",
+        "FORGOT_PASSWORD":"Forgot password ?",
+        "INVALID_PASSWORD":"Invalid password",
+        "INVALID_USERNAME":"Invalid username",
+        "INVALID_LOGIN":"Incorrect username or password"
+    }
+>>>>>>> 5a60097796d352e7af3ff3278226200c5c8782ce
+}

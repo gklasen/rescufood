@@ -1,0 +1,285 @@
+<c-card *ngIf="selectedDraft">
+	<c-card-body>
+		<h5 cCardTitle>{{ selectedInsertedTitle }}</h5> 
+		
+		<h6 cCardSubtitle class="mb-2 text-medium-emphasis">
+			ID
+		</h6>
+		
+		<p cCardText> 
+			{{ selectedDraft.id }}
+		</p>
+		
+		<h6 cCardSubtitle class="mb-2 text-medium-emphasis">
+			{{ "RECIPES.TITLE_DE" | translate }}
+		</h6>
+		
+		<p cCardText> 
+			<c-badge class="ing_variant_badge" color="secondary">
+				<input cFormControl 
+					(change)="changeTitle($event, 'de')"
+					style="margin-right: 8px;"
+					id="exampleFormControlInput1" 
+					type="text"
+					value="{{selectedDraft.title.de}}"
+				/>
+			</c-badge> 
+		</p>
+		
+		<h6 cCardSubtitle class="mb-2 text-medium-emphasis">
+			{{ "RECIPES.TITLE_EN" | translate }}
+		</h6>
+		
+		<p cCardText> 
+			<c-badge class="ing_variant_badge" color="secondary">
+				<input cFormControl 
+					(change)="changeTitle($event, 'en')"
+					style="margin-right: 8px;"
+					id="exampleFormControlInput1" 
+					type="text"
+					value="{{selectedDraft.title.en}}"
+				/>
+			</c-badge> 
+		</p>
+		
+		<h6 cCardSubtitle class="mb-2 text-medium-emphasis">
+			{{ "RECIPES.CATEGORY" | translate }}
+		</h6>
+		<p class="flex_wrap" cCardText> 
+			<c-badge class="ing_variant_badge" color="secondary">
+				<select [(ngModel)]="selectedDraft.category" aria-label="Default select example" cSelect>
+					<option value="snack">{{ "RECIPES.UNITS.SNACK" | translate }}</option>
+					<option value="salad">{{ "RECIPES.UNITS.SALAD" | translate }}</option>
+					<option value="dips">{{ "RECIPES.UNITS.DIPS" | translate }}</option>
+					<option value="soup">{{ "RECIPES.UNITS.SOUP" | translate }}</option>
+					<option value="garnish">{{ "RECIPES.UNITS.GARNISH" | translate }}</option>
+					<option value="starter">{{ "RECIPES.UNITS.STARTER" | translate }}</option>
+					<option value="maindish">{{ "RECIPES.UNITS.MAINDISH" | translate }}</option>
+					<option value="dessert">{{ "RECIPES.UNITS.DESSERT" | translate }}</option>
+					<option value="drink">{{ "RECIPES.UNITS.DRINK" | translate }}</option>
+					<option value="breakfast">{{ "RECIPES.UNITS.BREAKFAST" | translate }}</option>
+					<option value="cake">{{ "RECIPES.UNITS.CAKE" | translate }}</option>
+					<option value="bread">{{ "RECIPES.UNITS.BREAD" | translate }}</option>
+					<option value="sweets">{{ "RECIPES.UNITS.SWEETS" | translate }}</option>
+				</select>
+			</c-badge> 
+		</p>
+		
+		<h6 cCardSubtitle class="mb-2 text-medium-emphasis">
+			{{ "RECIPES.DURATION_PREP" | translate }}
+		</h6>
+		
+		<p cCardText> 
+			<c-badge class="ing_variant_badge" color="secondary">
+				<input cFormControl 
+					(change)="changeDuration($event, 'prep')"
+					style="margin-right: 8px;"
+					id="exampleFormControlInput1" 
+					type="number"
+					value="{{selectedDraft.duration_prep}}"
+				/>
+			</c-badge> 
+		</p>
+		
+		<h6 cCardSubtitle class="mb-2 text-medium-emphasis">
+			{{ "RECIPES.DURATION_COOK" | translate }}
+		</h6>
+		
+		<p cCardText> 
+			<c-badge class="ing_variant_badge" color="secondary">
+				<input cFormControl 
+					(change)="changeDuration($event, 'cook')"
+					style="margin-right: 8px;"
+					id="exampleFormControlInput1" 
+					type="number"
+					value="{{selectedDraft.duration_cook}}"
+				/>
+			</c-badge> 
+		</p>
+		
+		<h6 cCardSubtitle class="mb-2 text-medium-emphasis">
+			{{ "RECIPES.DURATION_REST" | translate }}
+		</h6>
+		
+		<p cCardText> 
+			<c-badge class="ing_variant_badge" color="secondary">
+				<input cFormControl 
+					(change)="changeDuration($event, 'rest')"
+					style="margin-right: 8px;"
+					id="exampleFormControlInput1" 
+					type="number"
+					value="{{selectedDraft.duration_rest}}"
+				/>
+			</c-badge> 
+		</p>
+		
+		<h6 cCardSubtitle class="mb-2 text-medium-emphasis">
+			{{ "RECIPES.DURATION_TOTAL" | translate }}
+		</h6>
+		
+		<p cCardText> 
+			<c-badge class="ing_variant_badge" color="secondary">
+				<input cFormControl disabled 
+					style="margin-right: 8px;"
+					id="exampleFormControlInput1" 
+					type="number"
+					value="{{selectedDraft.duration_total}}"
+				/>
+			</c-badge> 
+		</p>
+		
+		<h6 cCardSubtitle class="mb-2 text-medium-emphasis">
+			{{ "RECIPES.PORTIONS" | translate }}
+		</h6>
+		
+		<p cCardText> 
+			<c-badge class="ing_variant_badge" color="secondary">
+				<input cFormControl 
+					(change)="changePortions($event)"
+					style="margin-right: 8px;"
+					id="exampleFormControlInput1" 
+					type="number"
+					value="{{selectedDraft.portions}}"
+				/>
+			</c-badge> 
+		</p> 
+		
+		<h6 cCardSubtitle class="mb-2 text-medium-emphasis">
+			{{ "RECIPES.DIFFICULTY_LABEL" | translate }}
+		</h6>
+		
+		<p cCardText> 
+			<c-badge class="ing_variant_badge" color="secondary">
+				<select [(ngModel)]="selectedDraft.difficulty" aria-label="Default select example" cSelect>
+					<option value="0">{{ "RECIPES.DIFFICULTY.EASY" | translate }}</option>
+					<option value="1">{{ "RECIPES.DIFFICULTY.MEDIUM" | translate }}</option>
+					<option value="2">{{ "RECIPES.DIFFICULTY.HARD" | translate }}</option> 
+				</select>
+			</c-badge> 
+		</p>
+		
+		<p>
+			<c-form-check class="restrictionsFormCheck">
+			  <input class="restrictionsInput" [(ngModel)]="selectedDraft.vegetarian" cFormCheckInput id="vegetarian" type="checkbox" />
+			  <label cFormCheckLabel for="vegetarian">{{ "RECIPES.VEGETARIAN" | translate }}</label>
+			</c-form-check>
+			
+			<c-form-check class="restrictionsFormCheck">
+			  <input class="restrictionsInput" [(ngModel)]="selectedDraft.vegan" cFormCheckInput id="vegan" type="checkbox" />
+			  <label cFormCheckLabel for="vegan">{{ "RECIPES.VEGAN" | translate }}</label>
+			</c-form-check>
+		</p> 
+		
+		<h6 cCardSubtitle class="mb-2 text-medium-emphasis">
+			{{ "RECIPES.DESCRIPTION_DE" | translate }}
+		</h6>
+		
+		<p cCardText> 
+			<c-badge class="ing_variant_badge_full" color="secondary">
+				<textarea  cFormControl 
+					(change)="changeDescription($event, 'de')"
+					style="margin-right: 8px;"
+					id="description_de" 
+					type="text"
+					value="{{selectedDraft.description.de}}" 
+				></textarea>
+			</c-badge> 
+		</p>
+		
+		<h6 cCardSubtitle class="mb-2 text-medium-emphasis">
+			{{ "RECIPES.DESCRIPTION_EN" | translate }}
+		</h6>
+		
+		<p cCardText> 
+			<c-badge class="ing_variant_badge_full" color="secondary">
+				<textarea  cFormControl 
+					(change)="changeDescription($event, 'en')"
+					style="margin-right: 8px;"
+					id="description_en" 
+					type="text"
+					value="{{selectedDraft.description.en}}"
+				></textarea>
+			</c-badge> 
+		</p>
+		
+		<div class="flex_center"> 
+			<h6 cCardSubtitle class="text-medium-emphasis" 
+				style="margin-right: 16px;">
+				{{ "RECIPES.INGREDIENTS" | translate }}
+			</h6> 
+		
+			<button cButton (click)="addIngredient()">
+				<svg cIcon name="cilPlus" size="sm"></svg>
+			</button>	
+		</div>
+		 
+		<table [striped]="true" cTable>
+			<thead>
+				<tr>
+					<th scope="col">{{ "RECIPES.ORDER" | translate }}</th>
+					<th scope="col">{{ "RECIPES.NAME" | translate }}</th>
+					<th scope="col">{{ "RECIPES.CATEGORY" | translate }}</th>
+					<th scope="col">{{ "RECIPES.UNIT" | translate }}</th>  
+					<th scope="col">{{ "RECIPES.VALUE" | translate }}</th> 
+					<th scope="col">{{ "RECIPES.OPTIONAL" | translate }}</th> 
+					<th scope="col"></th> 
+				</tr>
+			</thead>
+			<tbody> 
+			<!--	<ng-template *ngFor="let recipeIngredient of selectedDraft.ingredients; let i = index">-->
+				<ng-template ngFor let-recipeIngredient [ngForOf]="selectedDraft.ingredients" let-i="index">
+					<tr>
+						<th scope="col-2" >
+							<div class="vcenter gap-2">
+								<button cButton variant="ghost" (click)="pushUpOrder(i)" [disabled]="i == 0">
+									<svg cIcon name="cilCaretTop" size="sm"></svg>
+								</button>	
+								<button cButton variant="ghost" (click)="pushDownOrder(i)" [disabled]="i == selectedDraft.ingredients.length - 1">
+									<svg cIcon name="cilCaretBottom" size="sm"></svg>
+								</button>	
+								{{recipeIngredient.order}}
+							</div> 
+						</th> 
+						<th scope="col">
+							<div class="vcenter">
+								<img cImg align="start" height="32" src="assets/ingredients/{{ recipeIngredient.icon }}.png" width="32" style="padding: 4px;" /> 
+								<select (focus)="markOldIngredient($event)" (change)="changeIngredient($event)" style="margin-left: 4px; line-height: 30px;" aria-label="Default select example" cSelect>
+									<option *ngFor="let ingredient of ingredientsService.getIngredients() | async | ingredientsort" 
+										[selected]="ingredient.id === recipeIngredient.name"  [value]="ingredient.id">{{ ingredient.names.de[0] }}</option> 
+								</select> 
+							</div>
+						</th> 
+						<th scope="col">  
+							<input [(ngModel)]="recipeIngredient.category" cFormControl id="category" type="text" /> 
+						</th> 
+						<th scope="col"> 
+							<select [(ngModel)]=" recipeIngredient.unit" aria-label="Default select example" cSelect>
+								<option *ngFor="let unit of ingredientsService.getAllIngredientUnits() | async" 
+									[selected]="unit.name === recipeIngredient.unit" [value]="unit.name">{{ "INGREDIENTS.UNITS."+unit.name.toUpperCase() | translate }}</option> 
+							</select>
+						</th> 
+						<th scope="col">
+							<input [(ngModel)]=" recipeIngredient.value" cFormControl id="category" type="number" />  
+						</th>
+						<th scope="col">
+							<div class="hcenter gap-2">
+								<input style="height: 1.75em; width: 1.75em;" [(ngModel)]=" recipeIngredient.optional"  cFormCheckInput id="optional"  type="checkbox" />  
+							</div>
+						</th> 
+						<th scope="col">
+							<button cButton variant="ghost" (click)="removeIngredient(recipeIngredient.name)">
+								<svg cIcon name="cilTrash" size="sm"></svg>
+							</button>
+						</th> 
+					</tr> 
+					<tr *ngIf="recipeIngredient.own_ingredient">
+						<th colSpan="9" style="--cui-table-accent-bg: white; padding: 0;">
+							<p class="new_ing_panel">{{ "DRAFTS.NEW_ENTRY" | translate:{name:recipeIngredient.originalName} }} </p> 
+						</th>
+					</tr>
+				</ng-template> 
+			</tbody>
+		</table> 
+		
+	</c-card-body>
+</c-card>

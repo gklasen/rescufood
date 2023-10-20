@@ -1,0 +1,20 @@
+<c-row>
+  <c-pagination>
+    <li cPageItem [disabled]="previousDisabled">
+      <span cPageLink (click)="previous()">{{
+        "PAGINATION.PREVIOUS" | translate
+      }}</span>
+    </li>
+    <li
+      *ngFor="let item of [].constructor(maxPages); let i = index"
+      [active]="currentPage === i + 1"
+      (click)="setPage(i + 1)"
+      cPageItem
+    >
+      <a cPageLink>{{ i + 1 }}</a>
+    </li>
+    <li cPageItem [disabled]="nextDisabled">
+      <a cPageLink (click)="next()">{{ "PAGINATION.NEXT" | translate }}</a>
+    </li>
+  </c-pagination>
+</c-row>

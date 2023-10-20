@@ -1,0 +1,7 @@
+<div cListGroup>
+	<div class="vcenter" *ngFor="let draft of recipeDraftsService.getRecipeDrafts() | async" > 
+		<a class="vcenter" cListGroupItem routerLink="/drafts/draft_details/{{draft.id}}"> 
+			<span>{{ draft.title.de }}</span>
+		</a> 
+	</div>  
+</div>

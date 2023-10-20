@@ -1,0 +1,49 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { ListGroupModule } from '@coreui/angular'; 
+import { FormsModule } from '@angular/forms';
+
+import { CategoriesOverviewComponent } from './categories_overview/categories_overview.component'; 
+
+import { CategoriesRoutingModule } from './categories-routing.module';
+import { DocsComponentsModule } from '@docs-components/docs-components.module';
+
+import { ServicesModule } from '../../services/services.module';
+import { PipesModule } from '../../pipes/pipes.module';
+
+import { TranslateModule } from '@ngx-translate/core'; 
+import { CardModule, AccordionModule, SharedModule, BadgeModule, FormModule, ImgModule, TableModule, UtilitiesModule, ButtonModule, AlertModule } from '@coreui/angular';
+import { IconModule, IconSetService } from '@coreui/icons-angular';
+
+@NgModule({
+	declarations: [
+		CategoriesOverviewComponent 
+	],
+	imports: [
+		FormsModule,
+		CommonModule,
+		AccordionModule,
+		SharedModule,
+		PipesModule,
+		ServicesModule,
+		CategoriesRoutingModule, 
+		ListGroupModule,
+		DocsComponentsModule,
+		TranslateModule,
+		CardModule,
+		BadgeModule, 
+		FormModule,
+		ImgModule,
+		ImgModule, 
+		TableModule,
+		ButtonModule,
+		IconModule,
+		AlertModule
+	],
+	providers: [
+		IconSetService
+	]
+})
+export class CategoriesModule {
+}

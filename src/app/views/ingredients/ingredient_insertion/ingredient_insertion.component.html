@@ -1,0 +1,163 @@
+<c-card *ngIf="dummyIngredient">
+	<c-card-body>
+		<h5 cCardTitle>{{ dummyIngredient.names['de'][0] }}</h5>
+		<h6 cCardSubtitle class="mb-2 text-medium-emphasis">
+			ID
+		</h6>
+		<p class="flex_wrap" cCardText> 
+			<c-badge class="ing_variant_badge" color="secondary">
+				<input cFormControl 
+					(change)="changeID($event)"
+					style="margin-right: 8px;"
+					id="exampleFormControlInput1" 
+					type="text"
+					value="{{dummyIngredient.id}}"
+				/>
+			</c-badge> 
+		</p> 
+		<h6 cCardSubtitle class="mb-2 text-medium-emphasis">
+			{{ "INGREDIENTS.CATEGORY" | translate }}
+		</h6>
+		<p class="flex_wrap" cCardText> 
+			<c-badge class="ing_variant_badge" color="secondary">
+				<input cFormControl 
+					(change)="changeCategory($event)"
+					style="margin-right: 8px;"
+					id="exampleFormControlInput1" 
+					type="text"
+					value="{{dummyIngredient.category}}"
+				/>
+			</c-badge> 
+		</p>
+		<div class="vcenter div_margin">
+			<h6 cCardSubtitle class="text-medium-emphasis panel_margin">
+				Icon
+			</h6>
+			<button cButton  (click)="changeIcon()" >
+				{{ "INGREDIENTS.CHANGE_ICON" | translate }}
+			</button>
+		</div>
+		<div class="vcenter">
+			<img cImg align="start" height="125" src="assets/ingredients/{{ dummyIngredient.icon }}.png" width="125" style="padding: 16px;" /> 
+		</div> 
+		<div class="vcenter div_margin">
+			<h6 cCardSubtitle class="text-medium-emphasis panel_margin">
+				{{ "INGREDIENTS.GERMAN_NAMES" | translate }}
+			</h6>
+			<button cButton 
+				(click)="addNameVariant('de')">
+				<svg cIcon name="cilPlus" size="l"></svg>
+			</button>	
+		</div>
+		<p class="flex_wrap" cCardText> 
+			<c-badge class="ing_variant_badge" color="secondary" *ngFor="let ingredient_name_de of dummyIngredient.names['de']; let position = index">
+				<input cFormControl 
+					(change)="changeNameVariant(ingredient_name_de, 'de', $event)"
+					style="margin-right: 8px;"
+					id="exampleFormControlInput1" 
+					type="text"
+					value="{{ingredient_name_de}}"
+				/>
+				<button *ngIf="position > 0" cButton color="light"
+					(click)="removeNameVariant(ingredient_name_de, 'de')">
+					<svg cIcon name="cilX" size="xl"></svg>
+				</button>
+			</c-badge> 
+		</p>
+		<div class="vcenter div_margin">
+			<h6 cCardSubtitle class="text-medium-emphasis panel_margin">
+				{{ "INGREDIENTS.ENGLISH_NAMES" | translate }}
+			</h6>
+			<button cButton 
+				(click)="addNameVariant('en')">
+				<svg cIcon name="cilPlus" size="l"></svg>
+			</button>	
+		</div> 
+		<p class="flex_wrap" cCardText>
+			<c-badge class="ing_variant_badge" color="secondary" *ngFor="let ingredient_name_en of dummyIngredient.names['en']; let position = index">
+				<input cFormControl 
+					(change)="changeNameVariant(ingredient_name_en, 'en', $event)"
+					style="margin-right: 8px;"
+					id="exampleFormControlInput1" 
+					type="text"
+					value="{{ingredient_name_en}}"
+				/>
+				<button *ngIf="position > 0" cButton color="light"
+					(click)="removeNameVariant(ingredient_name_en, 'en')"> 
+					<svg cIcon name="cilX" size="xl"></svg>
+				</button>
+			</c-badge> 
+		</p>
+		
+		<h6 cCardSubtitle class="mb-2 text-medium-emphasis">
+			{{ "INGREDIENTS.DEFAULT_VALUES" | translate }}
+		</h6> 
+		
+		<p>
+			<c-form-check>
+			  <input [(ngModel)]="dummyIngredient.defaultStoreroom" cFormCheckInput id="defaultStoreroom" type="checkbox" />
+			  <label cFormCheckLabel for="defaultStoreroom">{{ "INGREDIENTS.DEFAULT_STOREROOM" | translate }}</label>
+			</c-form-check>
+			
+			<c-form-check>
+			  <input [(ngModel)]="dummyIngredient.defaultIgnoreList" cFormCheckInput id="defaultIgnoreList" type="checkbox" />
+			  <label cFormCheckLabel for="defaultIgnoreList">{{ "INGREDIENTS.DEFAULT_IGNORELIST" | translate }}</label>
+			</c-form-check>
+		</p> 
+		
+		<h6 cCardSubtitle class="mb-2 text-medium-emphasis">
+			{{ "INGREDIENTS.UNIT_OF_MEASUREMENT" | translate }}
+		</h6> 
+		
+		<table [striped]="true" cTable>
+			<thead>
+				<tr>
+					<th scope="col">{{ "INGREDIENTS.UNIT" | translate }}</th>
+					<th scope="col">{{ "INGREDIENTS.VALUE" | translate }}</th>
+					<th scope="col">{{ "INGREDIENTS.FACTOR" | translate }}</th>
+					<th scope="col" style="text-align: center;">{{ "INGREDIENTS.DEFAULT_UNIT" | translate }}</th>  
+				</tr>
+			</thead>
+			<tbody> 
+				<tr *ngFor="let ingredient_unit of dummyIngredient.units">
+					<th scope="col">{{ "INGREDIENTS.UNITS."+ingredient_unit.name.toUpperCase() | translate }}</th> 
+					<td scope="col">
+						<input type="number" cFormControl 
+							[(ngModel)]="ingredient_unit.value"/>
+					</td>
+					<td scope="col">
+						<input type="number" cFormControl 
+							[disabled]="ingredient_unit.value == 0"
+							[(ngModel)]="ingredient_unit.factor"/> 
+					</td>
+					<td scope="col">
+						<div class="ing_variant_checkbtn_div">
+							<input cFormCheckInput class="ing_variant_checkbtn" type="radio" 
+								(change)="selectDefaultUnit(ingredient_unit.name)"
+								name="ingredientDefaultUnitCheckbox" 
+								[disabled]="ingredient_unit.value == 0"/>
+						</div>
+					</td> 
+				</tr> 
+			</tbody>
+		</table> 
+		<p class="vcenter" style="justify-content: flex-start;">
+			<button cButton (click)="updateIngredient()">
+				{{ "INGREDIENTS.UPDATE" | translate }}
+			</button>
+			
+			<c-alert fade [(visible)]="alertShown" color="warning" class="insertion-alert d-flex align-items-center">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+					class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+					<path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982
+						1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+				</svg>
+				<div> {{ alertText }}</div>
+			</c-alert>
+		</p>
+	</c-card-body>
+</c-card>
+
+<div >
+	
+</div>

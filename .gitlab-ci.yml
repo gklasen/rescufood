@@ -1,0 +1,35 @@
+stages:
+  - build
+  - build_image
+
+variables:
+  BRANCH_BUILD: "false"
+
+build:
+  stage: build
+  image: trion/ng-cli:16.1.1
+  before_script:
+    - sed -i "s@ENV_FSS_API_URL@$FSS_API_URL@g" src/environments/environment.prod.ts
+    - npm ci
+  script:
+    - ng build --configuration=production
+  only:
+    variables:
+      - ($BRANCH_BUILD == "true") || ($CI_COMMIT_BRANCH == "main") || ($CI_COMMIT_BRANCH =~ /^testing/i)
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - www/html
+      - Dockerfile
+      - nginx.conf
+
+build_image:
+  stage: build_image
+  only:
+    variables:
+      - ($BRANCH_BUILD == "true") || ($CI_COMMIT_BRANCH == "main") || ($CI_COMMIT_BRANCH =~ /^testing/i)
+  script:
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+    - if [ "main" == $CI_COMMIT_REF_NAME ]; then CI_COMMIT_REF_NAME="latest"; fi
+    - docker build --no-cache --pull -t $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME .
+    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME

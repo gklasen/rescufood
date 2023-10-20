@@ -1,0 +1,8 @@
+<div cListGroup>
+	<div class="vcenter" *ngFor="let ingredient of ingredientsService.getIngredients() | async | ingredientsort" > 
+		<a class="vcenter" cListGroupItem routerLink="/ingredients/ingredient_details/{{ingredient.id}}">
+			<img cImg align="start" height="32" src="assets/ingredients/{{ ingredient.icon }}.png" width="32" style="padding: 4px;" /> 
+			<span>{{ ingredient.names.de[0] }}</span>
+		</a> 
+	</div>  
+</div>

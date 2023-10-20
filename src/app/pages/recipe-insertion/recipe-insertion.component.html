@@ -1,0 +1,304 @@
+<div class="container">
+	<div class="tableOverviewDiv">
+		<table id="recipe_table">
+			<tr>
+				<th style="width: 5vw"><p class="col_panel">Nr</p></th>
+				<th style="width: 10vw"><p class="col_panel">ID</p></th>
+				<th style="width: 25vw"><p class="col_panel">URL</p></th>
+				<th><p class="col_panel">Titel (de)</p></th>
+				<th><p class="col_panel">Titel (en)</p></th>
+				<th style="width: 15vw"><p class="col_panel">Kategorie</p></th>
+				<th style="width: 5vw"><p class="col_panel">Dauer (Arbeit)</p></th>
+				<th style="width: 5vw"><p class="col_panel">Dauer (Kochen)</p></th>
+				<th style="width: 5vw"><p class="col_panel">Dauer (Ruhe)</p></th>
+				<th style="width: 5vw"><p class="col_panel">Dauer (Gesamt)</p></th>
+				<th style="width: 5vw"><p class="col_panel">Portionen</p></th>
+				<th style="width: 10vw"><p class="col_panel">Schwierigkeit</p></th>
+				<th style="width: 5vw"><p class="col_panel">Vegetarisch</p></th>
+				<th style="width: 5vw"><p class="col_panel">Vegan</p></th>
+				<th style="width: 40vw"><p class="col_panel">Beschreibung (de)</p></th>
+				<th style="width: 40vw"><p class="col_panel">Beschreibung (en)</p></th>
+				<th style="width: 30vw"><p class="col_panel">Ingredient 1</p></th>
+				<th style="width: 30vw"><p class="col_panel">Ingredient 2</p></th>
+				<th style="width: 30vw"><p class="col_panel">Ingredient 3</p></th>
+				<th style="width: 30vw"><p class="col_panel">Ingredient 4</p></th>
+				<th style="width: 30vw"><p class="col_panel">Ingredient 5</p></th>
+				<th style="width: 30vw"><p class="col_panel">Ingredient 6</p></th>
+				<th style="width: 30vw"><p class="col_panel">Ingredient 7</p></th>
+				<th style="width: 30vw"><p class="col_panel">Ingredient 8</p></th>
+				<th style="width: 30vw"><p class="col_panel">Ingredient 9</p></th>
+				<th style="width: 30vw"><p class="col_panel">Ingredient 10</p></th>
+				<th style="width: 30vw"><p class="col_panel">Ingredient 11</p></th>
+				<th style="width: 30vw"><p class="col_panel">Ingredient 12</p></th>
+				<th style="width: 30vw"><p class="col_panel">Ingredient 13</p></th>
+				<th style="width: 30vw"><p class="col_panel">Ingredient 14</p></th>
+				<th style="width: 30vw"><p class="col_panel">Ingredient 15</p></th>
+				
+			</tr>
+			<tr style="height: 5vh;">
+				<th style="width: 5vw"></th>
+				<th style="width: 10vw"><p id="recipe_id"></p></th>
+				<th style="width: 25vw"><input  (change)="parseURL()" id="input_url"></th>
+				<th><input id="input_title_de"></th>
+				<th><input id="input_title_en"></th>
+				<th style="width: 15vw"> 
+					<select name="input_recipe_category" id="input_recipe_category">
+						<option value="snack">Snack</option>
+						<option value="salad">Salat</option>
+						<option value="dips">Dips</option>
+						<option value="soup">Suppe</option>
+						<option value="garnish">Beilage</option>
+						<option value="starter">Vorspeise</option>
+						<option value="maindish">Hauptgericht</option>
+						<option value="dessert">Dessert</option>
+						<option value="drink">Getränk</option>
+						<option value="breakfast">Frühstück</option>
+						<option value="cake">Kuchen</option>
+						<option value="bread">Brot oder Brötchen</option>
+						<option value="sweets">Süßigkeiten</option>
+					</select>
+				</th>
+				<th style="width: 5vw"><input (change)="totalDuration()" id="input_duration_prep" type="number"></th>
+				<th style="width: 5vw"><input (change)="totalDuration()" id="input_duration_cook" type="number"></th>
+				<th style="width: 5vw"><input (change)="totalDuration()" id="input_duration_rest" type="number"></th>
+				<th style="width: 5vw"><p id="input_duration_total"></p></th>
+				<th style="width: 5vw"><input id="input_portions" type="number"></th>
+				<th style="width: 10vw">
+					<select name="input_difficulty" id="input_difficulty">
+						<option value="0">Einfach</option>
+						<option value="1">Normal</option>
+						<option value="2">Schwierig</option>
+					</select>
+				</th>
+				<th style="width: 5vw"><input id="input_vegetarian" type="checkbox"></th>
+				<th style="width: 5vw"><input id="input_vegan" type="checkbox"></th>
+				<th style="width: 40vw">
+					<textarea (keyup)="textAreaAdjust($event)" id="input_description_de"></textarea> 
+				</th>
+				<th style="width: 40vw"><textarea (keyup)="textAreaAdjust($event)" id="input_description_en"></textarea> </th>
+				<th style="width: 30vw">
+					<input style="width: 12.5vw" type="text" (keydown)="changeIngredientGuess($event)" id="input_ingredient1">
+					<button (click)="setIngredient($event)" class="centered" style="width: 12.5vw; height: 3vh;" disabled id="button_ingredient1"></button>
+					<div>
+						<p id="panel_ingredient1" style="display: none;" class="panel_ingredient"></p>
+						<p id="panel_ingredient1_cat" style="display: none;" class="panel_ingredient_cat"></p>
+					</div> 
+					<select (change)="checkValueBlocks($event)" id="select_ingredient_unit1" style="display: none;">
+					</select>
+					<input id="amount_ingredient1" type="number" style="display: none; width: 4vw;">
+					<p id="optional_panel1" style="display: none;">Opt:</p>
+					<input id="optional_ingredient1" type="checkbox" style="display: none; width: 2vw;">
+					<button (click)="reset($event)" class="centered" id="reset_ingredient1">X</button>
+				</th>
+				<th style="width: 30vw">
+					<input style="width: 12.5vw" type="text" (keydown)="changeIngredientGuess($event)" id="input_ingredient2">
+					<button (click)="setIngredient($event)" class="centered" style="width: 12.5vw; height: 3vh;" disabled id="button_ingredient2"></button>
+					<div>
+						<p id="panel_ingredient2" style="display: none;" class="panel_ingredient"></p>
+						<p id="panel_ingredient2_cat" style="display: none;" class="panel_ingredient_cat"></p>
+					</div> 
+					<select (change)="checkValueBlocks($event)" id="select_ingredient_unit2" style="display: none;">
+					</select>
+					<input id="amount_ingredient2" type="number" style="display: none; width: 4vw;">
+					<p id="optional_panel2" style="display: none;" >Opt:</p>
+					<input id="optional_ingredient2" type="checkbox" style="display: none; width: 2vw;">
+					<button (click)="reset($event)" class="centered" id="reset_ingredient2">X</button>
+				</th>
+				<th style="width: 30vw">
+					<input style="width: 12.5vw" type="text" (keydown)="changeIngredientGuess($event)" id="input_ingredient3">
+					<button (click)="setIngredient($event)" class="centered" style="width: 12.5vw; height: 3vh;" disabled id="button_ingredient3"></button>
+					<div>
+						<p id="panel_ingredient3" style="display: none;" class="panel_ingredient"></p>
+						<p id="panel_ingredient3_cat" style="display: none;" class="panel_ingredient_cat"></p>
+					</div> 
+					<select (change)="checkValueBlocks($event)" id="select_ingredient_unit3" style="display: none;">
+					</select>
+					<input id="amount_ingredient3" type="number" style="display: none; width: 4vw;">
+					<p id="optional_panel3" style="display: none;">Opt:</p>
+					<input id="optional_ingredient3" type="checkbox" style="display: none; width: 2vw;">
+					<button (click)="reset($event)" class="centered" id="reset_ingredient3">X</button>
+				</th>
+				<th style="width: 30vw">
+					<input style="width: 12.5vw" type="text" (keydown)="changeIngredientGuess($event)" id="input_ingredient4">
+					<button (click)="setIngredient($event)" class="centered" style="width: 12.5vw; height: 3vh;" disabled id="button_ingredient4"></button>
+					<div>
+						<p id="panel_ingredient4" style="display: none;" class="panel_ingredient"></p>
+						<p id="panel_ingredient4_cat" style="display: none;" class="panel_ingredient_cat"></p>
+					</div> 
+					<select (change)="checkValueBlocks($event)" id="select_ingredient_unit4" style="display: none;">
+					</select>
+					<input id="amount_ingredient4" type="number" style="display: none; width: 4vw;">
+					<p id="optional_panel4" style="display: none;">Opt:</p>
+					<input id="optional_ingredient4" type="checkbox" style="display: none; width: 2vw;">
+					<button (click)="reset($event)" class="centered" id="reset_ingredient4">X</button>
+				</th>
+				<th style="width: 30vw">
+					<input style="width: 12.5vw" type="text" (keydown)="changeIngredientGuess($event)" id="input_ingredient5">
+					<button (click)="setIngredient($event)" class="centered" style="width: 12.5vw; height: 3vh;" disabled id="button_ingredient5"></button>
+					<div>
+						<p id="panel_ingredient5" style="display: none;" class="panel_ingredient"></p>
+						<p id="panel_ingredient5_cat" style="display: none;" class="panel_ingredient_cat"></p>
+					</div> 
+					<select (change)="checkValueBlocks($event)" id="select_ingredient_unit5" style="display: none;">
+					</select>
+					<input id="amount_ingredient5" type="number" style="display: none; width: 4vw;">
+					<p id="optional_panel5" style="display: none;">Opt:</p>
+					<input id="optional_ingredient5" type="checkbox" style="display: none; width: 2vw;">
+					<button (click)="reset($event)" class="centered" id="reset_ingredient5">X</button>
+				</th>
+				<th style="width: 30vw">
+					<input style="width: 12.5vw" type="text" (keydown)="changeIngredientGuess($event)" id="input_ingredient6">
+					<button (click)="setIngredient($event)" class="centered" style="width: 12.5vw; height: 3vh;" disabled id="button_ingredient6"></button>
+					<div>
+						<p id="panel_ingredient6" style="display: none;" class="panel_ingredient"></p>
+						<p id="panel_ingredient6_cat" style="display: none;" class="panel_ingredient_cat"></p>
+					</div> 
+					<select (change)="checkValueBlocks($event)" id="select_ingredient_unit6" style="display: none;">
+					</select>
+					<input id="amount_ingredient6" type="number" style="display: none; width: 4vw;">
+					<p id="optional_panel6" style="display: none;">Opt:</p>
+					<input id="optional_ingredient6" type="checkbox" style="display: none; width: 2vw;">
+					<button (click)="reset($event)" class="centered" id="reset_ingredient6">X</button>
+				</th>
+				<th style="width: 30vw">
+					<input style="width: 12.5vw" type="text" (keydown)="changeIngredientGuess($event)" id="input_ingredient7">
+					<button (click)="setIngredient($event)" class="centered" style="width: 12.5vw; height: 3vh;" disabled id="button_ingredient7"></button>
+					<div>
+						<p id="panel_ingredient7" style="display: none;" class="panel_ingredient"></p>
+						<p id="panel_ingredient7_cat" style="display: none;" class="panel_ingredient_cat"></p>
+					</div> 
+					<select (change)="checkValueBlocks($event)" id="select_ingredient_unit7" style="display: none;">
+					</select>
+					<input id="amount_ingredient7" type="number" style="display: none; width: 4vw;">
+					<p id="optional_panel7" style="display: none;">Opt:</p>
+					<input id="optional_ingredient7" type="checkbox" style="display: none; width: 2vw;">
+					<button (click)="reset($event)" class="centered" id="reset_ingredient7">X</button>
+				</th>
+				<th style="width: 30vw">
+					<input style="width: 12.5vw" type="text" (keydown)="changeIngredientGuess($event)" id="input_ingredient8">
+					<button (click)="setIngredient($event)" class="centered" style="width: 12.5vw; height: 3vh;" disabled id="button_ingredient8"></button>
+					<div>
+						<p id="panel_ingredient8" style="display: none;" class="panel_ingredient"></p>
+						<p id="panel_ingredient8_cat" style="display: none;" class="panel_ingredient_cat"></p>
+					</div> 
+					<select (change)="checkValueBlocks($event)" id="select_ingredient_unit8" style="display: none;">
+					</select>
+					<input id="amount_ingredient8" type="number" style="display: none; width: 4vw;">
+					<p id="optional_panel8" style="display: none;">Opt:</p>
+					<input id="optional_ingredient8" type="checkbox" style="display: none; width: 2vw;">
+					<button (click)="reset($event)" class="centered" id="reset_ingredient8">X</button>
+				</th>
+				<th style="width: 30vw">
+					<input style="width: 12.5vw" type="text" (keydown)="changeIngredientGuess($event)" id="input_ingredient9">
+					<button (click)="setIngredient($event)" class="centered" style="width: 12.5vw; height: 3vh;" disabled id="button_ingredient9"></button>
+					<div>
+						<p id="panel_ingredient9" style="display: none;" class="panel_ingredient"></p>
+						<p id="panel_ingredient9_cat" style="display: none;" class="panel_ingredient_cat"></p>
+					</div>
+					<select (change)="checkValueBlocks($event)" id="select_ingredient_unit9" style="display: none;">
+					</select>
+					<input id="amount_ingredient9" type="number" style="display: none; width: 4vw;">
+					<p id="optional_panel9" style="display: none;">Opt:</p>
+					<input id="optional_ingredient9" type="checkbox" style="display: none; width: 2vw;">
+					<button (click)="reset($event)" class="centered" id="reset_ingredient9">X</button>
+				</th>
+				<th style="width: 30vw">
+					<input style="width: 12.5vw" type="text" (keydown)="changeIngredientGuess($event)" id="input_ingredient10">
+					<button (click)="setIngredient($event)" class="centered" style="width: 12.5vw; height: 3vh;" disabled id="button_ingredient10"></button>
+					<div>
+						<p id="panel_ingredient10" style="display: none;" class="panel_ingredient"></p>
+						<p id="panel_ingredient10_cat" style="display: none;" class="panel_ingredient_cat"></p>
+					</div>
+					<select (change)="checkValueBlocks($event)" id="select_ingredient_unit10" style="display: none;">
+					</select>
+					<input id="amount_ingredient10" type="number" style="display: none; width: 4vw;">
+					<p id="optional_panel10" style="display: none;">Opt:</p>
+					<input id="optional_ingredient10" type="checkbox" style="display: none; width: 2vw;">
+					<button (click)="reset($event)" class="centered" id="reset_ingredient10">X</button>
+				</th>
+				<th style="width: 30vw">
+					<input style="width: 12.5vw" type="text" (keydown)="changeIngredientGuess($event)" id="input_ingredient11">
+					<button (click)="setIngredient($event)" class="centered" style="width: 12.5vw; height: 3vh;" disabled id="button_ingredient11"></button>
+					<div>
+						<p id="panel_ingredient11" style="display: none;" class="panel_ingredient"></p>
+						<p id="panel_ingredient11_cat" style="display: none;" class="panel_ingredient_cat"></p>
+					</div>
+					<select (change)="checkValueBlocks($event)" id="select_ingredient_unit11" style="display: none;">
+					</select>
+					<input id="amount_ingredient11" type="number" style="display: none; width: 4vw;">
+					<p id="optional_panel11" style="display: none;">Opt:</p>
+					<input id="optional_ingredient11" type="checkbox" style="display: none; width: 2vw;">
+					<button (click)="reset($event)" class="centered" id="reset_ingredient11">X</button>
+				</th>
+				<th style="width: 30vw">
+					<input style="width: 12.5vw" type="text" (keydown)="changeIngredientGuess($event)" id="input_ingredient12">
+					<button (click)="setIngredient($event)" class="centered" style="width: 12.5vw; height: 3vh;" disabled id="button_ingredient12"></button>
+					<div>
+						<p id="panel_ingredient12" style="display: none;" class="panel_ingredient"></p>
+						<p id="panel_ingredient12_cat" style="display: none;" class="panel_ingredient_cat"></p>
+					</div>
+					<select (change)="checkValueBlocks($event)" id="select_ingredient_unit12" style="display: none;">
+					</select>
+					<input id="amount_ingredient12" type="number" style="display: none; width: 4vw;">
+					<p id="optional_panel12" style="display: none;">Opt:</p>
+					<input id="optional_ingredient12" type="checkbox" style="display: none; width: 2vw;">
+					<button (click)="reset($event)" class="centered" id="reset_ingredient12">X</button>
+				</th>
+				<th style="width: 30vw">
+					<input style="width: 12.5vw" type="text" (keydown)="changeIngredientGuess($event)" id="input_ingredient13">
+					<button (click)="setIngredient($event)" class="centered" style="width: 12.5vw; height: 3vh;" disabled id="button_ingredient13"></button>
+					<div>
+						<p id="panel_ingredient13" style="display: none;" class="panel_ingredient"></p>
+						<p id="panel_ingredient13_cat" style="display: none;" class="panel_ingredient_cat"></p>
+					</div>
+					<select (change)="checkValueBlocks($event)" id="select_ingredient_unit13" style="display: none;">
+					</select>
+					<input id="amount_ingredient13" type="number" style="display: none; width: 4vw;">
+					<p id="optional_panel13" style="display: none;">Opt:</p>
+					<input id="optional_ingredient13" type="checkbox" style="display: none; width: 2vw;">
+					<button (click)="reset($event)" class="centered" id="reset_ingredient13">X</button>
+				</th>
+				<th style="width: 30vw">
+					<input style="width: 12.5vw" type="text" (keydown)="changeIngredientGuess($event)" id="input_ingredient14">
+					<button (click)="setIngredient($event)" class="centered" style="width: 12.5vw; height: 3vh;" disabled id="button_ingredient14"></button>
+					<div>
+						<p id="panel_ingredient14" style="display: none;" class="panel_ingredient"></p>
+						<p id="panel_ingredient14_cat" style="display: none;" class="panel_ingredient_cat"></p>
+					</div>
+					<select (change)="checkValueBlocks($event)" id="select_ingredient_unit14" style="display: none;">
+					</select>
+					<input id="amount_ingredient14" type="number" style="display: none; width: 4vw;">
+					<p id="optional_panel14" style="display: none;">Opt:</p>
+					<input id="optional_ingredient14" type="checkbox" style="display: none; width: 2vw;">
+					<button (click)="reset($event)" class="centered" id="reset_ingredient14">X</button>
+				</th>
+				<th style="width: 30vw">
+					<input style="width: 12.5vw" type="text" (keydown)="changeIngredientGuess($event)" id="input_ingredient15">
+					<button (click)="setIngredient($event)" class="centered" style="width: 12.5vw; height: 3vh;" disabled id="button_ingredient15"></button>
+					<div>
+						<p id="panel_ingredient15" style="display: none;" class="panel_ingredient"></p>
+						<p id="panel_ingredient15_cat" style="display: none;" class="panel_ingredient_cat"></p>
+					</div>
+					<select (change)="checkValueBlocks($event)" id="select_ingredient_unit15" style="display: none;">
+					</select>
+					<input id="amount_ingredient15" type="number" style="display: none; width: 4vw;">
+					<p id="optional_panel15" style="display: none;">Opt:</p>
+					<input id="optional_ingredient15" type="checkbox" style="display: none; width: 2vw;">
+					<button (click)="reset($event)" class="centered" id="reset_ingredient15">X</button>
+				</th>
+				
+				<th>
+					<button (click)="submitRecipesToFirebase()">Speichern!</button>
+				</th> 
+			</tr>
+		</table>
+	</div>
+	<div class="buttons">
+		<button class="redBtn"(click)="loadRecipesFromFirebase()" >Rezepte von Firebase laden</button>
+		<button class="redBtn" (click)="translation()">correctTranslation</button>
+		<button class="redBtn" (click)="updateRecipeIngredients()">Zutatenkategorie-Update</button>
+		<button class="redBtn" (click)="refreshIngredients()">Excel-Zutaten laden</button>
+		<a class="redBtn" routerLink="/ingredient_insertion">Zu den Zutaten</a>
+		<a class="redBtn" (click)="goToOccurances()">Zu den Häufigkeiten</a>
+	</div>
+</div>

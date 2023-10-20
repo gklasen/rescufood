@@ -1,0 +1,25 @@
+.panel_ingredient {
+	min-width: 8vw;
+	margin: 0 1vw;
+	font-size: 1.5vh;
+}
+
+.panel_ingredient_cat {
+	min-width: 8vw;
+	margin: 0 1vw;
+	font-size: 1vh;
+}
+
+.panel_optional {
+	min-width: 4vw;
+	margin: 0 1vw;
+}
+
+.recipe_col_panel {
+	height: 2.5vh;
+	font-size: 1.5vh;
+	white-space: normal;
+	display: flex;
+	align-items: center;
+	margin: 0.5vh;
+}

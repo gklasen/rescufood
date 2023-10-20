@@ -1,0 +1,41 @@
+<laola-search (onSearch)="onSearch($event)"></laola-search>
+<h3>{{ 'PERFORMANCES.PERFORMANCES' | translate }}</h3>
+<c-card class="mb-4 file-table">
+  <c-card-body>
+    <table cTable> 
+		<thead>
+		<tr>
+		  <th style="width: 25%" scope="col">{{ "PERFORMANCES.TITLE" | translate }}</th>
+		  <th style="width: 30%" scope="col">{{ "PERFORMANCES.UPLOADDATE" | translate }}</th>
+		  <th style="width: 25%" scope="col">{{ "PERFORMANCES.COMMENT" | translate }}</th>
+		  <th style="width: 20%" scope="col">{{ "PERFORMANCES.ACTIONS" | translate }}</th>
+		</tr>
+		</thead>
+		<tbody> 
+			<tr *ngFor="let performance of pageItems$ | async; let currentVideoIndex = index;">
+				<td colSpan="4">
+					<div style="display: flex; margin-bottom: 16px;">
+						<div style="width: 25%">{{ performance.title }}</div>
+						<div style="width: 30%">{{ performance.uploadDate | shortDate }}</div>
+						<div style="width: 25%">{{ performance.comment }}</div>
+						<div style="width: 20%">
+							<a class="ms-3" (click)="showVideo(performance)">
+								<svg cIcon name="cilZoom" size="lg"></svg>
+							  </a>
+							  <a class="ms-3" (click)="downloadVideo(performance)">
+								<svg cIcon name="cilSave" size="lg"></svg>
+							  </a>
+							  <a class="ms-3" (click)="deleteVideo(performance)">
+								<svg cIcon name="cilTrash" size="lg"></svg>
+							  </a>
+						</div> 
+					</div> 
+				 </td>
+			  </tr>  
+      </tbody>
+    </table>
+  </c-card-body>
+</c-card> 
+<laola-pagination (changePage)="onPageChanged($event)" [items$]="laolaFileApi.performances$"></laola-pagination>
+
+

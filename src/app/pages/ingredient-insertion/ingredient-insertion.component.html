@@ -1,0 +1,192 @@
+<div>
+	<div class="ingredients_sidebar" *ngFor="let ingredient of ingredientsService.getIngredients() | async">
+		{{ ingredient.names.de[0] }}
+	<div>
+	 
+</div>
+
+<!-->
+<div class="container">
+	<div class="tableOverviewDiv">
+		<table id="ingredient_table">
+			<tr>
+				<th><p class="col_panel">Namen (de)</p></th>
+				<th><p class="col_panel">Namen (en)</p></th>
+				<th><p class="col_panel">Im Lager</p></th>
+				<th><p class="col_panel">Ignorieren</p></th>
+				<th><p class="col_panel">Iconname</p></th>
+				<th><p class="col_panel">Category</p></th>
+				<th><p class="col_panel">Einheit: Gramm</p></th>
+				<th><p class="col_panel">Einheit: Milliliter</p></th>
+				<th><p class="col_panel">Einheit: kl. Stück</p></th>
+				<th><p class="col_panel">Einheit: Stück</p></th>
+				<th><p class="col_panel">Einheit: gr. Stück</p></th>
+				<th><p class="col_panel">Einheit: Tasse</p></th>
+				<th><p class="col_panel">Einheit: Becher</p></th>
+				<th><p class="col_panel">Einheit: Dose</p></th>
+				<th><p class="col_panel">Einheit: gr. Dose</p></th>
+				<th><p class="col_panel">Einheit: Packung</p></th>
+				<th><p class="col_panel">Einheit: Beutel</p></th>
+				<th><p class="col_panel">Einheit: Glas</p></th>
+				<th><p class="col_panel">Einheit: Esslöffel</p></th>
+				<th><p class="col_panel">Einheit: Teelöffel</p></th>
+				<th><p class="col_panel">Einheit: Messerspitze</p></th>
+				<th><p class="col_panel">Einheit: Scheibe</p></th>
+				<th><p class="col_panel">Einheit: Bund</p></th>
+				<th><p class="col_panel">Einheit: Zweig</p></th>
+				<th><p class="col_panel">Einheit: Blatt</p></th>
+				<th><p class="col_panel">Einheit: Handvoll</p></th>
+				<th><p class="col_panel">Einheit: Würfel</p></th>
+				<th><p class="col_panel">Einheit: Zehe</p></th>
+				<th><p class="col_panel">Einheit: Tropfen</p></th>
+				<th><p class="col_panel">Einheit: Rolle</p></th>   
+				<th><p class="col_panel">Einheit: etwas</p></th>
+				<th><p class="col_panel"></th>
+			</tr>
+			<tr> 
+				<th><input id="input_names_de" type="text"></th>
+				<th><input id="input_names_en"></th>
+				<th><input id="input_in_storeroom" type="checkbox"></th>
+				<th><input id="input_in_ignorelist" type="checkbox"></th>
+				<th><input id="input_iconname"></th>
+				<th><input id="input_category"></th>
+				<th>
+					Val: <input id="input_unit_gram_val" style="width: 20%; margin: 0 0.5vw;">
+					,Fac: <input id="input_unit_gram_fac" style="width: 20%; margin: 0 0.5vw;">
+					,Sta: <input id="input_unit_gram_sta" type="checkbox" style="width: 20%; margin: 0 0.5vw;">
+				</th>
+				<th>
+					Val: <input id="input_unit_milliliter_val" style="width: 20%; margin: 0 0.5vw;">
+					,Fac: <input id="input_unit_milliliter_fac" style="width: 20%; margin: 0 0.5vw;">
+					,Sta: <input id="input_unit_milliliter_sta" type="checkbox" style="width: 20%; margin: 0 0.5vw;">
+				</th>
+				<th>
+					Val: <input id="input_unit_small_piece_val" style="width: 20%; margin: 0 0.5vw;">
+					,Fac: <input id="input_unit_small_piece_fac" style="width: 20%; margin: 0 0.5vw;">
+					,Sta: <input id="input_unit_small_piece_sta" type="checkbox" style="width: 20%; margin: 0 0.5vw;">
+				</th>
+				<th>
+					Val: <input id="input_unit_piece_val" style="width: 20%; margin: 0 0.5vw;">
+					,Fac: <input id="input_unit_piece_fac" style="width: 20%; margin: 0 0.5vw;">
+					,Sta: <input id="input_unit_piece_sta" type="checkbox" style="width: 20%; margin: 0 0.5vw;">
+				</th>
+				<th>
+					Val: <input id="input_unit_big_piece_val" style="width: 20%; margin: 0 0.5vw;">
+					,Fac: <input id="input_unit_big_piece_fac" style="width: 20%; margin: 0 0.5vw;">
+					,Sta: <input id="input_unit_big_piece_sta" type="checkbox" style="width: 20%; margin: 0 0.5vw;">
+				</th>
+				<th>
+					Val: <input id="input_unit_mug_val" style="width: 20%; margin: 0 0.5vw;">
+					,Fac: <input id="input_unit_mug_fac" style="width: 20%; margin: 0 0.5vw;">
+					,Sta: <input id="input_unit_mug_sta" type="checkbox" style="width: 20%; margin: 0 0.5vw;">
+				</th>
+				<th>
+					Val: <input id="input_unit_cup_val" style="width: 20%; margin: 0 0.5vw;">
+					,Fac: <input id="input_unit_cup_fac" style="width: 20%; margin: 0 0.5vw;">
+					,Sta: <input id="input_unit_cup_sta" type="checkbox" style="width: 20%; margin: 0 0.5vw;">
+				</th>
+				<th>
+					Val: <input id="input_unit_can_val" style="width: 20%; margin: 0 0.5vw;">
+					,Fac: <input id="input_unit_can_fac" style="width: 20%; margin: 0 0.5vw;">
+					,Sta: <input id="input_unit_can_sta" type="checkbox" style="width: 20%; margin: 0 0.5vw;">
+				</th>
+				<th>
+					Val: <input id="input_unit_big_can_val" style="width: 20%; margin: 0 0.5vw;">
+					,Fac: <input id="input_unit_big_can_fac" style="width: 20%; margin: 0 0.5vw;">
+					,Sta: <input id="input_unit_big_can_sta" type="checkbox" style="width: 20%; margin: 0 0.5vw;">
+				</th>
+				<th>
+					Val: <input id="input_unit_package_val" style="width: 20%; margin: 0 0.5vw;">
+					,Fac: <input id="input_unit_package_fac" style="width: 20%; margin: 0 0.5vw;">
+					,Sta: <input id="input_unit_package_sta" type="checkbox" style="width: 20%; margin: 0 0.5vw;">
+				</th>
+				<th>
+					Val: <input id="input_unit_bag_val" style="width: 20%; margin: 0 0.5vw;">
+					,Fac: <input id="input_unit_bag_fac" style="width: 20%; margin: 0 0.5vw;">
+					,Sta: <input id="input_unit_bag_sta" type="checkbox" style="width: 20%; margin: 0 0.5vw;">
+				</th>
+				<th>
+					Val: <input id="input_unit_glass_val" style="width: 20%; margin: 0 0.5vw;">
+					,Fac: <input id="input_unit_glass_fac" style="width: 20%; margin: 0 0.5vw;">
+					,Sta: <input id="input_unit_glass_sta" type="checkbox" style="width: 20%; margin: 0 0.5vw;">
+				</th>
+				<th>
+					Val: <input id="input_unit_tablespoon_val" style="width: 20%; margin: 0 0.5vw;">
+					,Fac: <input id="input_unit_tablespoon_fac" style="width: 20%; margin: 0 0.5vw;">
+					,Sta: <input id="input_unit_tablespoon_sta" type="checkbox" style="width: 20%; margin: 0 0.5vw;">
+				</th>
+				<th>
+					Val: <input id="input_unit_teaspoon_val" style="width: 20%; margin: 0 0.5vw;">
+					,Fac: <input id="input_unit_teaspoon_fac" style="width: 20%; margin: 0 0.5vw;">
+					,Sta: <input id="input_unit_teaspoon_sta" type="checkbox" style="width: 20%; margin: 0 0.5vw;">
+				</th>
+				<th>
+					Val: <input id="input_unit_knifetip_val" style="width: 20%; margin: 0 0.5vw;">
+					,Fac: <input id="input_unit_knifetip_fac" style="width: 20%; margin: 0 0.5vw;">
+					,Sta: <input id="input_unit_knifetip_sta" type="checkbox" style="width: 20%; margin: 0 0.5vw;">
+				</th>
+				<th>
+					Val: <input id="input_unit_slice_val" style="width: 20%; margin: 0 0.5vw;">
+					,Fac: <input id="input_unit_slice_fac" style="width: 20%; margin: 0 0.5vw;">
+					,Sta: <input id="input_unit_slice_sta" type="checkbox" style="width: 20%; margin: 0 0.5vw;">
+				</th>
+				<th>
+					Val: <input id="input_unit_bunch_val" style="width: 20%; margin: 0 0.5vw;">
+					,Fac: <input id="input_unit_bunch_fac" style="width: 20%; margin: 0 0.5vw;">
+					,Sta: <input id="input_unit_bunch_sta" type="checkbox" style="width: 20%; margin: 0 0.5vw;">
+				</th>
+				<th>
+					Val: <input id="input_unit_stalk_val" style="width: 20%; margin: 0 0.5vw;">
+					,Fac: <input id="input_unit_stalk_fac" style="width: 20%; margin: 0 0.5vw;">
+					,Sta: <input id="input_unit_stalk_sta" type="checkbox" style="width: 20%; margin: 0 0.5vw;">
+				</th>
+				<th>
+					Val: <input id="input_unit_leaf_val" style="width: 20%; margin: 0 0.5vw;">
+					,Fac: <input id="input_unit_leaf_fac" style="width: 20%; margin: 0 0.5vw;">
+					,Sta: <input id="input_unit_leaf_sta" type="checkbox" style="width: 20%; margin: 0 0.5vw;">
+				</th>
+				<th>
+					Val: <input id="input_unit_handful_val" style="width: 20%; margin: 0 0.5vw;">
+					,Fac: <input id="input_unit_handful_fac" style="width: 20%; margin: 0 0.5vw;">
+					,Sta: <input id="input_unit_handful_sta" type="checkbox" style="width: 20%; margin: 0 0.5vw;">
+				</th>
+				<th>
+					Val: <input id="input_unit_cube_val" style="width: 20%; margin: 0 0.5vw;">
+					,Fac: <input id="input_unit_cube_fac" style="width: 20%; margin: 0 0.5vw;">
+					,Sta: <input id="input_unit_cube_sta" type="checkbox" style="width: 20%; margin: 0 0.5vw;">
+				</th>
+				<th>
+					Val: <input id="input_unit_clove_val" style="width: 20%; margin: 0 0.5vw;">
+					,Fac: <input id="input_unit_clove_fac" style="width: 20%; margin: 0 0.5vw;">
+					,Sta: <input id="input_unit_clove_sta" type="checkbox" style="width: 20%; margin: 0 0.5vw;">
+				</th>
+				<th>
+					Val: <input id="input_unit_drop_val" style="width: 20%; margin: 0 0.5vw;">
+					,Fac: <input id="input_unit_drop_fac" style="width: 20%; margin: 0 0.5vw;">
+					,Sta: <input id="input_unit_drop_sta" type="checkbox" style="width: 20%; margin: 0 0.5vw;">
+				</th>
+				
+				<th>
+					Val: <input id="input_unit_roll_val" style="width: 20%; margin: 0 0.5vw;">
+					,Fac: <input id="input_unit_roll_fac" style="width: 20%; margin: 0 0.5vw;">
+					,Sta: <input id="input_unit_roll_sta" type="checkbox" style="width: 20%; margin: 0 0.5vw;">
+				</th>
+				<th>
+					Val: <input id="input_unit_some_val" style="width: 20%; margin: 0 0.5vw;">
+					,Fac: <input id="input_unit_some_fac" style="width: 20%; margin: 0 0.5vw;">
+					,Sta: <input id="input_unit_some_sta" type="checkbox" style="width: 20%; margin: 0 0.5vw;">
+				</th>
+				<th>
+					<button (click)="submitIngredientToFirebase()">Speichern!</button>
+				</th>
+			</tr>
+		</table>
+	</div>
+	<div class="buttons">
+		<button class="redBtn" (click)="loadIngredientsFromFirebase()" >Zutaten von Firebase laden</button>
+		<a class="redBtn" (click)="goToRecipes()">Zu den Rezepten</a>
+        <a class="redBtn" (click)="goToRecipeDrafts()">Zu den Rezeptvorschlägen</a>
+		<a class="redBtn" (click)="goToOccurances()">Zu den Häufigkeiten</a>
+	</div>
+</div>
+-->

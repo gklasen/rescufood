@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "foodpuzzle-2ee52",
+  "private_key_id": "f7c42f10314a9573799910ca5c16873d75739025",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDfNUDhBJKsVgSP\nlnNKZjTLC39WzjqkSh0U/USeL4dxW5AojT1ceDhWZlhm/5EBxe1ekxIQSy26zTc9\n9NkUuB67O4VRiKY89xemmVGly3F1L7EzACZTXpw/GBqCI28mscm2fGR+14UZxqIJ\nQn4Qa7N/JUdMt45ZuIntFYs4eHCHIdunB4YliH9RthN8Se9VLDASZWxim7D2ZjSW\nQo1ia7lxVG8vcH4H04AiaXy2aryqfp4NN8wJ2W656UBlhwLH76duv8P1qR0t1SNl\nsL2Hg9KWPoGMxqbjb9qtaQ9uXHtqlnvQg6o3tA5F3Cxoee3vJvuDvecfgqrfuBk2\nwkitXnUdAgMBAAECggEARC0eY3yDllrxqq/wCAX+0xPwcaGtHLg8eMhBGLX4v0GR\n3ykA2Ikp4A4Dq3YdIvcDITN3vX1Q+vEqkeSDF8aDMHomJvi/mfh5A1xqKWNiBMKr\n86F0k1tfCxCALEbJcP6112TYRzvp/i0DGiPyoG5dFZVb2U1pj/MDQeSmMPnsmQFG\n0+amSJmOuH233Mz25w6y3eX+18oK2y7hfyYAwW4dIcOuoraETxq0NehmaZvmgj4i\nBew8wKbspxNyHOn/P6dY86FjN/cHrvkyVRDV1YV4YZ/N7ZrLN13AmxopUyaP1z9j\nmejUNTymavm8b5gHwzJSVqG85e5EeO099E3TNYKP2wKBgQD4lVp6MItkO9f3490X\nhuCroCANec7gK1qxAT8AM0GRQqkKcjweoyWo9MgVnBYgHZX9/ZfzayNPvGCK0OPG\nZgwH21/IxGVOIT3TanZo0hFae5QaRC/eXnSWLYpfTOnfHrz0iM+XaehOgSvDzNdW\ntqqakuCrD/wF0VeY3qnCtk5CQwKBgQDl3hYQ6NJ6An5LwF3o0jG8cOD2dABXAJ7j\n0usJXUurU6NP8H39uuAfQs0KW7ja6CYNifcYeDIV4n2mpSPjo473anjTTlfsdqGK\nIPPkM3h35fkujbWtS+Li1U1WdTqIHjQZyO3IDW2t1JVn+8TfeXo+FETf7y5R8G+E\nVWm4I0BlHwKBgQCgtOXecv3a2jmAYEbyS9d5/TZbn/EXyc+C+XxCY+CyyXbBcyLc\n57qUJVQpbFR9hMMQhl8zFoOoq+96LxviityiQ7gD8rxPq3vt7zkIAS8I4TXZWVXd\nHBGheWWowO+9uICOUthqWiS+hBHILujUfZmD/wrSbK4REMrh4Km9YODtQwKBgBFK\nrZpECWFIQrvsEqRq+3bTfvjLLSNeVpWIzkl8DS8sMYLX8oJdxnJTkh0PXU6KXCJ0\nmHPsxsfCq/UXQyXireSKy+AJaq/NFMXRSMeH364VTLNl0Z7hsIWjyheQ5gBLVVwD\nM2/zIqcK8NpLpDmzZ7C30Z6O3YsobRslWbiSXku9AoGBAMCRiyN1dhMAJZveYPLx\nb2btNs6uz6s4ZrX68Dp3Bhwa9+5oA1+a4QGT4Gu7K+Pj1Rq5CEOnpj9EQ1mE9iYs\nlo5gJFDWc/nm4jNLSCjIT80c6rGZYQDsziuDlb8zXngMtLdt3lRi5V+f9miI/8h5\nLcbGTT6mkuPKhVsKDhqeEUyG\n-----END PRIVATE KEY-----\n",
+  "client_email": "foodpuzzle-2ee52@appspot.gserviceaccount.com",
+  "client_id": "106796832501146532028",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/foodpuzzle-2ee52%40appspot.gserviceaccount.com"
+}

@@ -1,0 +1,127 @@
+<div *ngIf="!(laolaFileApi.uploadRunning$ | async)">
+  <c-card *ngIf="!uploaded" class="mb-4">
+    <c-card-body>
+      <form cForm [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label cLabel for="titleInput">
+            {{ "UPLOAD.TITLELABEL" | translate }}
+          </label>
+          <input
+            type="text"
+            formControlName="titleInput"
+            cFormControl
+            id="titleInput"
+          />
+          <label
+            *ngIf="
+              uploadForm.get('titleInput')?.invalid &&
+              uploadForm.get('titleInput')?.dirty
+            "
+            class="formFieldError mt-1"
+            >{{ "UPLOAD.REQUIREDERROR" | translate }}
+          </label>
+        </div>
+        <div class="mb-3">
+          <label cLabel for="fileInput">
+            {{ "UPLOAD.VIDEOLABEL" | translate }}
+          </label>
+          <input
+            formControlName="fileInput"
+            cFormControl
+            accept="video/mp4,video/x-m4v,video/*"
+            id="fileInput"
+            (change)="receiveFile($event)"
+            type="file"
+          />
+          <label
+            *ngIf="
+              uploadForm.get('fileInput')?.invalid &&
+              uploadForm.get('fileInput')?.dirty
+            "
+            class="formFieldError mt-1"
+            >{{ "UPLOAD.REQUIREDERROR" | translate }}
+          </label>
+        </div>
+        <div class="mb-3">
+          <label cLabel for="commentInput">{{
+            "UPLOAD.COMMENTLABEL" | translate
+          }}</label>
+          <textarea
+            formControlName="commentInput"
+            cFormControl
+            id="commentInput"
+            rows="3"
+          ></textarea>
+          <label
+            *ngIf="
+              uploadForm.get('fileInput')?.invalid &&
+              uploadForm.get('fileInput')?.dirty
+            "
+            class="formFieldError mt-1"
+            >{{ "UPLOAD.REQUIREDERROR" | translate }}
+          </label>
+        </div>
+        <div class="mb-3">
+          <button
+            [disabled]="!uploadForm.valid"
+            cButton
+            class="me-1"
+            color="primary"
+            type="submit"
+          >
+           <svg cIcon class="me-2" name="cil-data-transfer-up"></svg>
+            {{ "UPLOAD.SUBMIT" | translate }}
+          </button>
+        </div>
+      </form>
+    </c-card-body>
+  </c-card>
+
+    <c-alert *ngIf="uploaded" color="success">
+        <h4 cAlertHeading>{{ "UPLOAD.UPLOADDONE" | translate }}</h4>
+        <p> {{ "UPLOAD.DONECANRETURNTOLIST" | translate }}</p>
+        <hr />
+        <p class="mb-1">{{ "UPLOAD.DONEORCANADDMORE" | translate }}</p>
+        <button (click)="uploadMore()"
+            [disabled]="!uploadForm.valid"
+            cButton
+            class="me-1"
+            color="primary"
+            type="submit"
+        >
+        <svg cIcon class="me-2" name="cil-plus"></svg>
+
+        {{ "UPLOAD.UPLOADMORE" | translate }}
+        </button>
+    </c-alert> 
+    <c-alert *ngIf="laolaFileApi.error$ | async" color="danger">
+        <h4 cAlertHeading>{{ "UPLOAD.UPLOADFAILURE" | translate }}</h4>
+        <p> {{ "UPLOAD.PLEASETRYAGAIN" | translate }}</p>
+        <hr />
+        <button (click)="uploadMore()"
+            [disabled]="!uploadForm.valid"
+            cButton
+            class="me-1"
+            color="primary"
+            type="submit"
+        >
+        <svg cIcon class="me-2" name="cil-plus"></svg>
+
+        {{ "UPLOAD.TRYAGAIN" | translate }}
+        </button>
+    </c-alert> 
+</div>
+
+<div *ngIf="laolaFileApi.uploadRunning$ | async">
+  <c-card class="mb-4">
+    <c-card-body>
+      <h5 class="text-center">{{ "UPLOAD.UPLOADINPROGRESS" | translate }}</h5>
+      <h6>{{ laolaFileApi.uploadCurrentFiles$ | async }} / {{ laolaFileApi.uploadMaxFiles$ | async }}</h6>
+      <c-progress class="mb-4" [height]="20">
+        <c-progress-bar progress-bar-striped progress-bar-animated
+          [value]="laolaFileApi.uploadProgress$ | async"
+        ></c-progress-bar>
+      </c-progress>
+    </c-card-body>
+  </c-card>
+</div>

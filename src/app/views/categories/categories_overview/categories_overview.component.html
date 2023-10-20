@@ -1,0 +1,18 @@
+<c-accordion>  
+	<c-accordion-item #item0="cAccordionItem" *ngFor="let category of categories | keyvalue">
+		<ng-template cTemplateId="accordionHeaderTemplate">
+      <button (click)="item0.toggleItem()" [collapsed]="!item0.visible" cAccordionButton>
+		{{ category.key }} 
+      </button>
+    </ng-template>
+		<ng-template cTemplateId="accordionBodyTemplate">
+			<div class="accordion-body">
+				<div cListGroup>
+					<button cListGroupItem *ngFor="let item of $any(category).value"> {{ item }}</button> 
+				</div>
+			</div>
+		</ng-template>
+	</c-accordion-item>  
+	  
+</c-accordion>
+ 
