@@ -35,7 +35,7 @@ export class RecipeDraftsService {
 		); 
 	} 
 	
-	getRecipeDrafts() {
+	getRecipeDrafts(): Observable<any> {
 		return this.recipeDrafts$;
 	}   
 	

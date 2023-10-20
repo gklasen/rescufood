@@ -40,7 +40,7 @@ export class RecipesService {
 		); 
 	} 
 	
-	getRecipes() {
+	getRecipes(): Observable<any> {
 		return this.recipes$;
 	}  
 	

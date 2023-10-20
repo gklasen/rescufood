@@ -45,7 +45,7 @@ export class IngredientsService {
 		); 
 	}
 	
-	getIngredients() {
+	getIngredients(): Observable<any> {
 		return this.ingredients$;
 	}   
 	

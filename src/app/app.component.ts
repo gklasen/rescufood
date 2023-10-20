@@ -7,6 +7,7 @@ import { iconSubset } from './icons/icon-subset';
 
 import { RecipesService } from './services/recipes.service';
 import { IngredientsService } from './services/ingredients.service';
+import { RecipeDraftsService } from './services/recipe_drafts.service';
 
 
 import { Title } from '@angular/platform-browser';
@@ -27,7 +28,8 @@ export class AppComponent implements OnInit {
 		private iconSetService: IconSetService,
 		private translate: TranslateService,
 		private recipesService: RecipesService,
-		private ingredientsService: IngredientsService
+		private ingredientsService: IngredientsService,
+		private recipeDraftsService: RecipeDraftsService
 	) {
 		
 		titleService.setTitle(this.title);
@@ -36,11 +38,12 @@ export class AppComponent implements OnInit {
 		
 		combineLatest([
 			this.recipesService.getRecipes(),
-			this.ingredientsService.getIngredients()
-		]).pipe(first()).subscribe(([r, i]) => {   
+			this.ingredientsService.getIngredients(),
+			this.recipeDraftsService.getRecipeDrafts()
+		]).pipe(first()).subscribe(([r, i, d]) => {   
 			new Notification({
 				title: translate.instant("NOTIFICATION.OVERVIEW"),
-				body: translate.instant("NOTIFICATION.SUMMARY", {recipes: r.length, ingredients: i.length}),
+				body: translate.instant("NOTIFICATION.SUMMARY", {recipes: r.length, ingredients: i.length, drafts: d.length}),
 				icon: path.join(__dirname, 'assets', 'icon.png')
 			}).show()   
 		});

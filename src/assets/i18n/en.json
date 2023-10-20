@@ -1,7 +1,7 @@
 { 
     "NOTIFICATION": {
 		"OVERVIEW": "Overview",
-		"SUMMARY": "Recipes {{recipes}}\nIngredients {{ingredients}}"
+		"SUMMARY": "Recipes {{recipes}}\nIngredients {{ingredients}}\nDrafts: {{drafts}}"
 	}, 
     "UPLOAD": {
         "BACK": "Back",
